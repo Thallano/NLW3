@@ -1,5 +1,6 @@
 import {Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
 import Image from './Image';
+import Gift from './Gift';
 
 @Entity('orphanages')
 
@@ -33,4 +34,10 @@ export default class Orphanage {
     })
     @JoinColumn({ name: 'orphanage_id'})
     images: Image[];
+
+    @OneToMany(()=> Gift, gift => gift.orphanage, {
+        cascade: ['insert', 'update']
+    })
+    @JoinColumn({ name: 'orphanage_id'})
+    gifts: Gift[];
 }

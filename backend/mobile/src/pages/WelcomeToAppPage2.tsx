@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 
 import styles from '../styles/orphanagesstyles';
 
-import { RectButton } from 'react-native-gesture-handler';
+import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import kids  from '../../assets/kids.png';
 
 import { useNavigation } from '@react-navigation/native';
@@ -20,9 +20,12 @@ export default function WelcomeToAppPage2(){
     
     return (
         <View style={styles.container}>
+          <BorderlessButton onPress={navigation.goBack} style={{alignSelf: 'flex-start', marginTop: 20, marginLeft: 40}}>
+                <Feather name="arrow-left" size={24} color="#15B6D6"   />
+          </BorderlessButton>
          <View style={styles.welcome}>
           
-          <Image source={kids} style={{height: 427, width:295, resizeMode: 'contain'}}/>
+          <Image source={kids} style={{height: 380, width:260, resizeMode: 'contain'}}/>
 
           <Text style={styles.welcomeTextFooterPageTwo}>Escolha um orfanato no mapa e faça uma visita</Text>
            

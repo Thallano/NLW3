@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     title:{
         fontFamily: 'Nunito_600SemiBold',
         color: '#8FA7B3',
-        fontSize: 16,
+        fontSize: 20,
+        
     }
 
 })

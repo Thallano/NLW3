@@ -8,20 +8,26 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
 
-    welcome:{
+    containerPage:{
       flex: 1,
+      backgroundColor: '#EBF2F5',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    welcome:{
       backgroundColor: '#EBF2F5',
       justifyContent: 'center',
       alignItems: 'center',
     },
 
     welcomeText:{
+      marginTop: 15,
       fontFamily: "Nunito_800ExtraBold",
       color: '#0089A5',
       fontSize: 48,
       maxWidth: 250,
       lineHeight: 50,
-      marginBottom: 20,
     },
 
     welcomeTextFooter:{
@@ -48,8 +54,8 @@ const styles = StyleSheet.create({
     },
 
     footerWelcome:{
-      width: 450,
-      marginTop: 40,
+      width: 400,
+      marginTop: 20,
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
@@ -72,9 +78,7 @@ const styles = StyleSheet.create({
     marker:{
       height: 60,
       width: 60,
-
-    }
-    ,
+    },
   
     calloutContainer:{
       width: 160,

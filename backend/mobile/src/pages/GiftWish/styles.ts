@@ -49,7 +49,7 @@ export default StyleSheet.create({
         borderRadius: 20,
         borderWidth: 3,
         borderColor: '#2B9B63',
-        backgroundColor: '#FFF',
+        backgroundColor: '#EDFFF6',
         marginBottom: 16,
         shadowOffset: {
             width: 0,
@@ -64,14 +64,15 @@ export default StyleSheet.create({
     giftProperty: {
         fontSize: 20,
         color: '#196740',
-        fontWeight: 'bold',
+        fontFamily: "Nunito_800ExtraBold",
     },
     
     giftValue: {
         marginTop: 8,
         fontSize: 18,
         marginBottom: 25,
-        color: '#2B9B63'
+        color: '#2B9B63',
+        fontFamily: "Nunito_600SemiBold",
     },
 
     detailsButton: {

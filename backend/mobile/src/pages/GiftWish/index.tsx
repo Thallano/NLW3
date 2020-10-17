@@ -17,7 +17,7 @@ export default function GiftsWish(){
     return (
         <View style={styles.container}>
             <View style={styles.containerBackground}>
-            <Text style={styles.title}>Olá, seja o papai noel dessas crianças! ^^</Text>
+            <Text style={styles.title}>Olá, seja o Papai Noel dessas crianças! ^^</Text>
             <Image source={happyKid} style={{height:200, width: 200, resizeMode: 'contain', alignSelf: 'center'}} />
             </View>
 
@@ -40,9 +40,9 @@ export default function GiftsWish(){
                         <Text style={styles.giftValue}>
                             R$ 5,00
                         </Text>
+                            <Feather name="gift" size={45} color="#FF669D" style={{alignSelf: 'center'}}/>
                         <RectButton style={styles.detailsButton}> 
                             <Text style={styles.detailsButtonText}>PRESENTEAR ESTA CRIANÇA</Text>
-                            <Feather name="gift" size={45} color="#FFF"/>
                         </RectButton>
                 </View>
 
@@ -57,9 +57,9 @@ export default function GiftsWish(){
                         <Text style={styles.giftValue}>
                             R$ 15,00
                         </Text>
+                        <Feather name="gift" size={45} color="#FF669D" style={{alignSelf: 'center'}}/>
                         <RectButton style={styles.detailsButton}> 
                             <Text style={styles.detailsButtonText}>PRESENTEAR ESTA CRIANÇA</Text>
-                            <Feather name="gift" size={45} color="#FFF"/>
                         </RectButton>
                 </View>
 
@@ -74,9 +74,9 @@ export default function GiftsWish(){
                         <Text style={styles.giftValue}>
                             R$ 25,00
                         </Text>
+                        <Feather name="gift" size={45} color="#FF669D" style={{alignSelf: 'center'}}/>
                         <RectButton style={styles.detailsButton}> 
                             <Text style={styles.detailsButtonText}>PRESENTEAR ESTA CRIANÇA</Text>
-                            <Feather name="gift" size={45} color="#FFF"/>
                         </RectButton>
                 </View>
 

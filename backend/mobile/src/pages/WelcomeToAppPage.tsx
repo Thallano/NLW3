@@ -18,10 +18,10 @@ export default function WelcomeToAppPage(){
   }
     
     return (
-        <View style={styles.container}>
+        <View style={styles.containerPage}>
          <View style={styles.welcome}>
 
-          <Image source={WelcomeWorld} style={{marginBottom: 50}} />
+          <Image source={WelcomeWorld} />
 
           <Text style={styles.welcomeText}>Leve felicidade para o mundo</Text>
           <Text style={styles.welcomeTextFooter}>Visite orfanatos e mude o dia de muitas crianças.</Text>

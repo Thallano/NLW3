@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import Orphanage from '../models/Orphanage';
 import orphanageView from '../views/orphanages_view';
+
 import * as Yup from 'yup';
 
 export default {
@@ -68,6 +69,38 @@ export default {
                     path: Yup.string().required()
                 })
             )
+        });
+
+        await schema.validate(data, {
+            abortEarly: false,
+        });
+
+        const orphanage = orphanagesRepository.create(data);
+        
+        await orphanagesRepository.save(orphanage);
+        
+        return response.status(201).json(orphanage);
+    },
+
+    async gift(request: Request, response: Response){
+        const { 
+            name,
+            wish,
+            value,
+        } = request.body;
+               
+        const data = {
+            name,
+            wish,
+            value,
+        };
+        
+        const giftRepository = getRepository(Orphanage);
+
+        const schema = Yup.object().shape({
+            name: Yup.string().required(),
+            wish: Yup.string().required(),
+            value: Yup.number().required(),
         });
 
         await schema.validate(data, {
