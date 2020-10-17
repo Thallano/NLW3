@@ -1,4 +1,5 @@
 # NLW3
+Obs: Meu pc bugou na hora de fazer o git push, então o mobile e o web ficaram dentro da pasta backend
 
 Aplicativo para listar, cadastrar Orfanatos mostranto informações do mesmo.
 
