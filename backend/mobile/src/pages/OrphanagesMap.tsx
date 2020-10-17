@@ -34,7 +34,7 @@ export default function OrphanagesMap(){
 
     function handleNavigateToSelectMapPosition(){
       navigation.navigate('SelectMapPosition');
-  }
+    }
     
     return (
         <View style={styles.container}>

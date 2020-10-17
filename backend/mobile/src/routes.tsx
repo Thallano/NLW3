@@ -7,7 +7,11 @@ import OrphanagesMap from './pages/OrphanagesMap';
 import OrphanageDetails from './pages/OrphanageDetails';
 import OrphanageData from './pages/OrphanageData';
 import SelectMapPosition from './pages/SelectMapPosition';
+import WelcomeToAppPage from './pages/WelcomeToAppPage';
+import WelcomeToAppPageTwo from './pages/WelcomeToAppPage2';
+
 import Header from './components/Header';
+import GiftsWish from './pages/GiftWish';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -15,9 +19,24 @@ export default function Routes(){
     return(
         <NavigationContainer>
             <Navigator screenOptions={ {headerShown: false, cardStyle: {backgroundColor: '#F2F3F5'}}} >
+
+                <Screen 
+                    name="WelcomeToAppPage" 
+                    component={WelcomeToAppPage}
+                />
+
+                <Screen 
+                    name="WelcomeToAppPageTwo" 
+                    component={WelcomeToAppPageTwo}
+                />
+            
                 <Screen 
                     name="OrphanagesMap" 
                     component={OrphanagesMap}
+                />
+                <Screen
+                    name="GiftsWish"
+                    component={GiftsWish}
                 />
                 <Screen 
                     name="OrphanageDetails" 
@@ -43,6 +62,8 @@ export default function Routes(){
                         header: ( ) => <Header title="Selecione no mapa"/>
                     }}
                 />
+
+
             </Navigator>
         </NavigationContainer>
     )

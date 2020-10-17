@@ -3,7 +3,7 @@ import { Image, View, ScrollView, Text, StyleSheet, Dimensions, Linking } from '
 import MapView, { Marker } from 'react-native-maps';
 import { Feather, FontAwesome } from '@expo/vector-icons';
 import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import mapMarkerImg from '../images/map-marker.png';
 import api from '../services/api';
 
@@ -18,6 +18,7 @@ interface Orphanage {
   latitude: number;
   longitude: number;
   about: string;
+  whatsapp: string;
   instrutctions: string;
   opening_hours: string;
   open_on_weekends: boolean;
@@ -29,6 +30,8 @@ interface Orphanage {
 
 export default function OrphanageDetails() {
   const route = useRoute();
+  const navigation = useNavigation();
+
   const [ orphanage, setOrphanage ] = useState<Orphanage>();
 
   const params = route.params as OrphanageDetaiulsRouteParams;
@@ -47,6 +50,10 @@ export default function OrphanageDetails() {
         <Text style={styles.description}>Carregando...</Text>
       </View>
     )
+  }
+
+  function navitageToGiftWish(){
+    navigation.navigate('GiftsWish');
   }
 
   return (
@@ -97,9 +104,17 @@ export default function OrphanageDetails() {
             <Text style={styles.routesText}>Ver rotas no Google Maps</Text>
           </TouchableOpacity>
         </View>
-      
-        <View style={styles.separator} />
+        
+        <FontAwesome name="gift" size={70} color="#FF669D" style={{alignSelf: 'center'}}/>
 
+        <RectButton style={styles.giftButton} onPress={navitageToGiftWish}>
+          {/*<FontAwesome name="gift" size={70} color="#FFF" />*/}
+          <Text style={styles.contactButtonText}>Ver Lista de Presentes deste Orfanato</Text>
+        </RectButton> 
+        
+
+        <View style={styles.separator} />
+        
         <Text style={styles.title}>Instruções para visita</Text>
         <Text style={styles.description}>{orphanage.instrutctions}</Text>
 
@@ -122,11 +137,7 @@ export default function OrphanageDetails() {
           )
           }
         </View>
-
-        <RectButton style={styles.contactButton} onPress={() => {}}>
-          <FontAwesome name="whatsapp" size={24} color="#FFF" />
-          <Text style={styles.contactButtonText}>Entrar em contato</Text>
-        </RectButton>
+        
       </View>
     </ScrollView>
   )
@@ -247,14 +258,32 @@ const styles = StyleSheet.create({
     color: '#FF669D'
   },
 
+  footerButtons:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 40,
+  },
+
   contactButton: {
     backgroundColor: '#3CDC8C',
     borderRadius: 20,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     height: 56,
-    marginTop: 40,
+    width: 200,
+  },
+
+  giftButton: {
+    backgroundColor: '#FF669D',
+    borderRadius: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    height: 60,
+    width: 200,   
   },
 
   contactButtonText: {
@@ -262,5 +291,6 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 16,
     marginLeft: 16,
+    textAlign: 'center'
   }
 })

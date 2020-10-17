@@ -6,32 +6,32 @@ import { Feather } from '@expo/vector-icons';
 import styles from '../styles/orphanagesstyles';
 
 import { RectButton } from 'react-native-gesture-handler';
-import WelcomeWorld  from '../../assets/WelcomeWorld.png';
+import kids  from '../../assets/kids.png';
+
 import { useNavigation } from '@react-navigation/native';
 
-export default function WelcomeToAppPage(){
+export default function WelcomeToAppPage2(){
   
     const navigation = useNavigation();
     
-    function handleNavigateToWelcomeToAppPage2(){
-      navigation.navigate('WelcomeToAppPageTwo');
+    function handleNavigateToOrphanagesMap(){
+      navigation.navigate('OrphanagesMap');
   }
     
     return (
         <View style={styles.container}>
          <View style={styles.welcome}>
+          
+          <Image source={kids} style={{height: 427, width:295, resizeMode: 'contain'}}/>
 
-          <Image source={WelcomeWorld} style={{marginBottom: 50}} />
-
-          <Text style={styles.welcomeText}>Leve felicidade para o mundo</Text>
-          <Text style={styles.welcomeTextFooter}>Visite orfanatos e mude o dia de muitas crianças.</Text>
+          <Text style={styles.welcomeTextFooterPageTwo}>Escolha um orfanato no mapa e faça uma visita</Text>
            
           <View style={styles.footerWelcome}>
               <View style={styles.windowSelected}>
-                <Feather name="minus" size={30} color="#FFD152"/>
                 <Feather name="minus" size={30} color="#BECFD8"/>
+                <Feather name="minus" size={30} color="#FFD152"/>
               </View>
-            <RectButton style={styles.welcomeButtonNext} onPress={handleNavigateToWelcomeToAppPage2}>
+            <RectButton style={styles.welcomeButtonNext} onPress={handleNavigateToOrphanagesMap}>
               <Feather name="arrow-right" size={20} color="#15B6D6"/>
             </RectButton>
           </View>
