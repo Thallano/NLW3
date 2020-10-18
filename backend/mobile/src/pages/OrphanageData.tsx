@@ -21,6 +21,7 @@ export default function OrphanageData() {
   const [about, setAbout] = useState('');
   const [instructions, setInstructions] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<string[]>([]);
 
@@ -39,6 +40,7 @@ export default function OrphanageData() {
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
     data.append('instructions', instructions);
+    data.append('whatsapp', whatsapp);
     data.append('opening_hours', opening_hours);
     data.append('open_on_weekends', String(open_on_weekends));
 
@@ -52,7 +54,7 @@ export default function OrphanageData() {
 
     await api.post('orphanages', data);
 
-    navigation.navigate('OrphanagesMap');
+    navigation.navigate('OrphanageCreated');
 
   }
 
@@ -108,6 +110,7 @@ export default function OrphanageData() {
         style={styles.input}
         value={name}
         onChangeText={setName}
+        placeholder="Nome do Orfanato"
       />
 
       <Text style={styles.label}>Sobre</Text>
@@ -116,15 +119,17 @@ export default function OrphanageData() {
         multiline
         value={about}
         onChangeText={setAbout}
+        placeholder="Descreva um pouco sobre o Orfanato"
       />
 
-      {/*<Text style={styles.label}>Whatsapp</Text>
+      <Text style={styles.label}>Whatsapp</Text>
       <TextInput
         style={styles.input}
         value={whatsapp}
         onChangeText={setWhatsapp}
-      />*/
-      }
+        placeholder="(86)99999-9999"
+      />
+      
       <Text style={styles.label}>Fotos</Text>
 
       <View style={styles.uploadedImagesContainer}>
@@ -144,7 +149,7 @@ export default function OrphanageData() {
         <Feather name="plus" size={24} color="#15B6D6" />
       </TouchableOpacity>
 
-      <Text style={styles.title}>Visitação</Text>
+      <Text style={styles.title} >Visitação</Text>
 
       <Text style={styles.label}>Instruções</Text>
       <TextInput
@@ -152,6 +157,7 @@ export default function OrphanageData() {
         multiline
         value={instructions}
         onChangeText={setInstructions}
+        placeholder="Diga algum cuidado para ter se tiver neste campo ao fazer a visitação: Por exemplo: 'Venha com máscara!'"
       />
 
       <Text style={styles.label}>Horario de visitas</Text>
@@ -159,6 +165,7 @@ export default function OrphanageData() {
         style={styles.input}
         value={opening_hours}
         onChangeText={setOpeningHours}
+        placeholder="8h às 18h"
       />
 
       <View style={styles.switchContainer}>

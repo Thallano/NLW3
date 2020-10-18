@@ -1,10 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class giftWishes1602969940913 implements MigrationInterface {
+export class createImages1602990375861 implements MigrationInterface {
 
+  
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-        name: 'gift',
+            name: 'images',
             columns: [  
                 {
                     name: 'id',
@@ -15,23 +16,17 @@ export class giftWishes1602969940913 implements MigrationInterface {
                     generationStrategy: 'increment',
                 },
                 {
-                    name: 'name',
+                    name: 'path',
                     type: 'varchar',
                 },
                 {
-                    name: 'wish',
-                    type: 'text',
-                },
-                {
-                    name: 'value',
-                    type: 'decimal',
-                    scale: 10,
-                    precision: 2,
-                },
+                    name: 'orphanage_id',
+                    type: 'integer',
+                }
             ],
             foreignKeys:[
                 {
-                    name: 'GiftOrphanage',
+                    name: 'ImageOrphanage',
                     columnNames: ['orphanage_id'],
                     referencedTableName: 'orphanages',
                     referencedColumnNames: ['id'],
@@ -43,7 +38,7 @@ export class giftWishes1602969940913 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('gift');
+        await queryRunner.dropTable('images');
     }
 
 }

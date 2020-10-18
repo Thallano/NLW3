@@ -15,10 +15,52 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
 
+    containerOrphanageCreatedPage:{
+      flex: 1,
+      backgroundColor: '#39CC82',
+      paddingHorizontal: 24,
+      alignContent: 'center',
+      justifyContent: 'center'
+    },
+
     welcome:{
       backgroundColor: '#EBF2F5',
       justifyContent: 'center',
       alignItems: 'center',
+    },
+
+    titleOrphnageCreated:{
+      marginTop: 15,
+      fontFamily: "Nunito_800ExtraBold",
+      color: '#FFF',
+      fontSize: 48,
+      textAlign: 'center',
+      lineHeight: 50,
+    },
+
+    titleOrphnageCreatedFooter:{
+      fontFamily: "Nunito_600SemiBold",
+      color: '#FFF',
+      fontSize: 20,
+      lineHeight: 25,
+      textAlign: 'center'
+    },
+
+    buttonOrphanageCreated:{
+      backgroundColor: '#D1EDF2',
+      marginRight: 45,
+      borderRadius: 20,
+      height: 56,
+      width: 56,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+
+    footerOrphanageCreated:{
+      width: 400,
+      marginTop: 20,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
     },
 
     welcomeText:{

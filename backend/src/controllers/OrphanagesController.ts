@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import Orphanage from '../models/Orphanage';
 import orphanageView from '../views/orphanages_view';
+const crypto = require('crypto');
 
 import * as Yup from 'yup';
 
@@ -37,8 +38,11 @@ export default {
             instructions,
             opening_hours,
             open_on_weekends,
+            whatsapp
         } = request.body;
-        
+
+        const key = crypto.randomBytes(4).toString('HEX');
+
         const orphanagesRepository = getRepository(Orphanage);
         
         const requestImages = request.files as Express.Multer.File[];
@@ -53,14 +57,18 @@ export default {
             about,
             instructions,
             opening_hours,
+            whatsapp,
             open_on_weekends: open_on_weekends === 'true',
-            images
+            images,
+            key
         };
         const schema = Yup.object().shape({
             name: Yup.string().required(),
+            key: Yup.string().required(),
             latitude: Yup.number().required(),
             longitude: Yup.number().required(),
             about: Yup.string().required().max(300),
+            whatsapp: Yup.string().required().max(10),
             instructions: Yup.string().required(),
             opening_hours: Yup.string().required(),
             open_on_weekends: Yup.boolean().required(),
@@ -82,7 +90,7 @@ export default {
         return response.status(201).json(orphanage);
     },
 
-    async gift(request: Request, response: Response){
+    /*async gift(request: Request, response: Response){
         const { 
             name,
             wish,
@@ -112,5 +120,5 @@ export default {
         await orphanagesRepository.save(orphanage);
         
         return response.status(201).json(orphanage);
-        }
+        }*/
 };

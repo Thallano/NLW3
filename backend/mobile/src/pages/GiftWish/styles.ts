@@ -46,6 +46,7 @@ export default StyleSheet.create({
 
     giftContainer: {
         padding: 40,
+        maxHeight: 390,
         borderRadius: 20,
         borderWidth: 3,
         borderColor: '#2B9B63',
@@ -62,15 +63,23 @@ export default StyleSheet.create({
     },
 
     giftProperty: {
-        fontSize: 20,
+        fontSize: 16,
         color: '#196740',
         fontFamily: "Nunito_800ExtraBold",
+    },
+
+    giftNumber:{
+        fontSize: 16,
+        color: '#196740',
+        fontFamily: "Nunito_800ExtraBold",
+        textAlign: 'right',
+        marginBottom: -16
     },
     
     giftValue: {
         marginTop: 8,
-        fontSize: 18,
-        marginBottom: 25,
+        fontSize: 14,
+        marginBottom: 10,
         color: '#2B9B63',
         fontFamily: "Nunito_600SemiBold",
     },

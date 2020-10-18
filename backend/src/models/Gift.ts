@@ -1,7 +1,7 @@
-import {Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from 'typeorm';
 import Orphanage from './Orphanage';
 
-@Entity('orphanages')
+@Entity('gifts')
 
 export default class Gift {
     @PrimaryGeneratedColumn('increment')
@@ -16,7 +16,7 @@ export default class Gift {
     @Column()
     value: number;
 
-    @ManyToOne(()=> Orphanage, orphanage => orphanage.gift)
+    @ManyToOne(()=> Orphanage, orphanage => orphanage.gifts)
     @JoinColumn({name: 'orphanage_id'})
     orphanage: Orphanage;
 }

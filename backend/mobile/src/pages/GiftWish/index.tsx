@@ -23,13 +23,14 @@ export default function GiftsWish(){
 
             <ScrollView
                 showsVerticalScrollIndicator={false}
-                style={{marginTop: -210}}
+                style={{marginTop: -230}}
                 contentContainerStyle={{
-                    paddingTop: 210,
+                    paddingTop: 190,
             }}
                 
             >
                 <View style={styles.giftContainer}>
+                        <Text style={styles.giftNumber}>#01</Text>
                         <Text style={styles.giftProperty}>NOME DA CRIANÇA:</Text>
                         <Text style={styles.giftValue}>João Vitor</Text>
 
@@ -47,6 +48,7 @@ export default function GiftsWish(){
                 </View>
 
                 <View style={styles.giftContainer}>
+                        <Text style={styles.giftNumber}>#02</Text>
                         <Text style={styles.giftProperty}>NOME DA CRIANÇA:</Text>
                         <Text style={styles.giftValue}>Maria Leticia</Text>
 
@@ -64,6 +66,7 @@ export default function GiftsWish(){
                 </View>
 
                 <View style={styles.giftContainer}>
+                <Text style={styles.giftNumber}>#03</Text>
                         <Text style={styles.giftProperty}>NOME DA CRIANÇA:</Text>
                         <Text style={styles.giftValue}>Cleber Machado</Text>
 

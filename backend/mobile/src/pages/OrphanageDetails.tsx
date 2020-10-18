@@ -107,10 +107,10 @@ export default function OrphanageDetails() {
         
         <FontAwesome name="gift" size={70} color="#FF669D" style={{alignSelf: 'center'}}/>
 
-        <RectButton style={styles.giftButton} onPress={navitageToGiftWish}>
+        <TouchableOpacity style={styles.giftButton} onPress={navitageToGiftWish}>
           {/*<FontAwesome name="gift" size={70} color="#FFF" />*/}
           <Text style={styles.contactButtonText}>Ver Lista de Presentes deste Orfanato</Text>
-        </RectButton> 
+        </TouchableOpacity> 
         
 
         <View style={styles.separator} />
