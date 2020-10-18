@@ -12,9 +12,13 @@ Poderá ser também doação der brinquedos, ou roupas, para dia das crianças o
 
 ###ScreenShots SpashScreen e Welcome
 
-![Expo_Screenshot_2020 10 18_00 24 14](https://user-images.githubusercontent.com/20881531/96357942-5762b880-10d8-11eb-87f0-dab4c9d02f0e.jpg)
-![Expo_Screenshot_2020 10 18_00 24 18](https://user-images.githubusercontent.com/20881531/96357943-57fb4f00-10d8-11eb-8555-ef6ec3387a42.jpg)
-![Expo_Screenshot_2020 10 18_00 24 25](https://user-images.githubusercontent.com/20881531/96357944-5893e580-10d8-11eb-93b5-d1b78c56d7e2.jpg)
+![Screenshot_20201018-002944](https://user-images.githubusercontent.com/20881531/96358035-3d75a580-10d9-11eb-8d4f-3e2974c16b0d.png)
+![Screenshot_20201018-002936](https://user-images.githubusercontent.com/20881531/96358037-3e0e3c00-10d9-11eb-9da7-4e217b4ce96f.png)
+![Screenshot_20201018-002920](https://user-images.githubusercontent.com/20881531/96358038-3ea6d280-10d9-11eb-86ee-870c3ed87cd4.png)
+![Screenshot_20201018-002915](https://user-images.githubusercontent.com/20881531/96358039-3f3f6900-10d9-11eb-828e-559bededbb53.png)
+![Screenshot_20201018-002907](https://user-images.githubusercontent.com/20881531/96358040-3f3f6900-10d9-11eb-9ccd-c773b867b509.png)
+![Screenshot_20201018-003005](https://user-images.githubusercontent.com/20881531/96358041-3fd7ff80-10d9-11eb-98f1-6587938db227.png)
+![Screenshot_20201018-002953](https://user-images.githubusercontent.com/20881531/96358042-3fd7ff80-10d9-11eb-822a-c1671bf57b72.png)
 
 ###ScreenShots da Tela de Listagem de Orfanatos 
 
