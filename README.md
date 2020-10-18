@@ -10,7 +10,7 @@ Listei e adicionei eles já no app.
 Como a cidade é pequena e tem poucos ofanatos, irei adicionar uma funcionalitade especial para o Natal, que é a pessoa pode doar valores para essas casas.
 Poderá ser também doação der brinquedos, ou roupas, para dia das crianças ou no natal.
 
-###ScreenShots SpashScreen e Welcome
+###ScreenShots SplashScreen e Welcome
 
 ![Screenshot_20201018-002907](https://user-images.githubusercontent.com/20881531/96358040-3f3f6900-10d9-11eb-9ccd-c773b867b509.png)
 ![Screenshot_20201018-002915](https://user-images.githubusercontent.com/20881531/96358039-3f3f6900-10d9-11eb-828e-559bededbb53.png)
