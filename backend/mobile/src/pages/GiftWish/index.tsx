@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Feather } from '@expo/vector-icons';
-import { View, FlatList, Image, Text, Linking }  from 'react-native';
+import { View, Image, Text, Linking }  from 'react-native';
 
 import happyKid from '../../../assets/happyKid.png';
 
@@ -37,11 +37,7 @@ export default function GiftsWish(){
                         <Text style={styles.giftProperty}>DESEJO:</Text>
                         <Text style={styles.giftValue}>Queria uma bola de futebol, para brincar com meus amigos no orfanato!</Text>
 
-                        <Text style={styles.giftProperty}>VALOR:</Text>
-                        <Text style={styles.giftValue}>
-                            R$ 5,00
-                        </Text>
-                            <Feather name="gift" size={45} color="#FF669D" style={{alignSelf: 'center'}}/>
+                        <Feather name="gift" size={45} color="#FF669D" style={{alignSelf: 'center'}}/>
                         <RectButton style={styles.detailsButton}> 
                             <Text style={styles.detailsButtonText}>PRESENTEAR ESTA CRIANÇA</Text>
                         </RectButton>
@@ -55,10 +51,7 @@ export default function GiftsWish(){
                         <Text style={styles.giftProperty}>DESEJO:</Text>
                         <Text style={styles.giftValue}>Queria uma boneca polly pode ser das mais baratinhas mesmo</Text>
 
-                        <Text style={styles.giftProperty}>VALOR:</Text>
-                        <Text style={styles.giftValue}>
-                            R$ 15,00
-                        </Text>
+                        
                         <Feather name="gift" size={45} color="#FF669D" style={{alignSelf: 'center'}}/>
                         <RectButton style={styles.detailsButton}> 
                             <Text style={styles.detailsButtonText}>PRESENTEAR ESTA CRIANÇA</Text>
@@ -73,10 +66,7 @@ export default function GiftsWish(){
                         <Text style={styles.giftProperty}>DESEJO:</Text>
                         <Text style={styles.giftValue}>Queria um carrinho de controle Remoto</Text>
 
-                        <Text style={styles.giftProperty}>VALOR:</Text>
-                        <Text style={styles.giftValue}>
-                            R$ 25,00
-                        </Text>
+                
                         <Feather name="gift" size={45} color="#FF669D" style={{alignSelf: 'center'}}/>
                         <RectButton style={styles.detailsButton}> 
                             <Text style={styles.detailsButtonText}>PRESENTEAR ESTA CRIANÇA</Text>

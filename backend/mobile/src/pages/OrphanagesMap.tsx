@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 
 import { Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
@@ -8,7 +8,7 @@ import styles from '../styles/orphanagesstyles';
 
 import mapMarker from '../images/map-marker.png'
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
-import { RectButton } from 'react-native-gesture-handler';
+import {  RectButton } from 'react-native-gesture-handler';
 import api from '../services/api';
 
 interface Orphanage {
@@ -36,8 +36,14 @@ export default function OrphanagesMap(){
       navigation.navigate('SelectMapPosition');
     }
     
+    function handleGiftPressed(){
+      navigation.navigate('GiftCreate');
+    }
+    
     return (
-        <View style={styles.container}>
+      
+      <View style={styles.container}>
+      
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
@@ -67,7 +73,7 @@ export default function OrphanagesMap(){
             >
               <Callout tooltip onPress={()=> handleNavigateToOrphanageDetail(orphanage.id)}>
                 <View style={styles.calloutContainer}>
-                <Text style={styles.calloutText}>{orphanage.name}s</Text>
+                <Text style={styles.calloutText}>{orphanage.name}</Text>
                 </View>
               </Callout>     
             </Marker>
@@ -75,7 +81,14 @@ export default function OrphanagesMap(){
         })}
       </MapView>
 
-      <View style={styles.footer}>
+      <View style={styles.header}>
+          <Text style={styles.footerText}>Crie aqui sua lista de presentes</Text>
+          <RectButton style={styles.createGiftList} onPress={handleGiftPressed}>
+            <Feather name="gift" size={20} color="#FFF"/>
+          </RectButton>
+      </View>
+      
+     <View style={styles.footer}>
         <Text style={styles.footerText}>{orphanages.length} orfanatos encontrados</Text>
         <RectButton style={styles.createOrphnageButton} onPress={handleNavigateToSelectMapPosition}>
           <Feather name="plus" size={20} color="#FFF"/>

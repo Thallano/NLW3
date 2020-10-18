@@ -13,6 +13,7 @@ import OrphanageCreated from './pages/OrphanageCreated';
 
 import Header from './components/Header';
 import GiftsWish from './pages/GiftWish';
+import GiftCreate from './pages/GiftCreate';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -39,6 +40,11 @@ export default function Routes(){
                 <Screen
                     name="GiftsWish"
                     component={GiftsWish}
+                />
+
+                <Screen
+                    name="GiftCreate"
+                    component={GiftCreate}
                 />
 
                 <Screen 
