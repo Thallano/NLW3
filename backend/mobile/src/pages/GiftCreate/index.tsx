@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 import SantaClaus from '../../../assets/SantaClaus.png';
 
 import styles from '../../styles/orphanagesstyles';
-import { RectButton } from 'react-native-gesture-handler';
+import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 export default function GiftCreate(){
     const [key, setKey] = useState('');
@@ -13,6 +13,9 @@ export default function GiftCreate(){
     const [gift, setGift] = useState('');
     
     return (
+        <ScrollView 
+            style={styles.containerData} contentContainerStyle={{ padding: 24 }}
+         >
         <View style={styles.container}>
             
             <Text style={styles.title}>Envie uma carta ao Papai Noel</Text>
@@ -43,10 +46,11 @@ export default function GiftCreate(){
                             multiline
             />
             </View>
-            <RectButton style={[styles.nextButton, {width: 150}]} onPress={()=>{alert("Mensagem enviada para o Papai Noel!")}}>
-                <Text style={styles.nextButtonText}>Enviar Carta</Text>
+            <RectButton style={styles.sendLetter} onPress={()=>{alert("Mensagem enviada para o Papai Noel!")}}>
+                <Text style={styles.sendLetterText}>Enviar Carta</Text>
                 <Feather name="mail" size={20} color="#FFF" style={{alignSelf: 'center'}}/>
             </RectButton>
         </View>
+        </ScrollView>
     );
 }

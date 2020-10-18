@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
       color: '#FFF',
       fontSize: 20,
       lineHeight: 25,
+      width: 350,
       textAlign: 'center'
     },
 
@@ -275,8 +276,24 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       marginTop: 16,
     },
-  
-    nextButton: {
+
+    sendLetter:{
+      backgroundColor: '#15c3d6',
+      borderRadius: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 56,
+      width: 250,
+      marginTop: 32,
+    },
+
+    sendLetterText: {
+      fontFamily: 'Nunito_800ExtraBold',
+      fontSize: 16,
+      color: '#FFF',
+    },
+
+    creationButton: {
       backgroundColor: '#15c3d6',
       borderRadius: 20,
       justifyContent: 'center',
@@ -285,12 +302,50 @@ const styles = StyleSheet.create({
       marginTop: 32,
     },
   
+    creationText: {
+      fontFamily: 'Nunito_800ExtraBold',
+      fontSize: 16,
+      color: '#FFF',
+    },
+
+    nextButton: {
+      backgroundColor: '#15c3d6',
+      borderRadius: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 56,
+  
+      position: 'absolute',
+      left: 24,
+      right: 24,
+      bottom: 40,
+    },
+  
     nextButtonText: {
       fontFamily: 'Nunito_800ExtraBold',
       fontSize: 16,
       color: '#FFF',
     },
+
+    /* Orphanage Map Position Selection*/
+
+    instructionsAddLocation:{
+      position:'absolute',
+      backgroundColor: 'rgba(39,193,215, 0.6)',
+      flex: 1,
+      elevation: 4,
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    },
+
+    containerSelectMapPosition: {
+      flex: 1,
+      position: 'relative'
+    },
   
+
   });
 
   export default styles;

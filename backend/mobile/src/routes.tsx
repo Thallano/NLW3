@@ -9,7 +9,7 @@ import OrphanageData from './pages/OrphanageData';
 import SelectMapPosition from './pages/SelectMapPosition';
 import WelcomeToAppPage from './pages/WelcomeToAppPage';
 import WelcomeToAppPageTwo from './pages/WelcomeToAppPage2';
-import OrphanageCreated from './pages/OrphanageCreated';
+
 
 import Header from './components/Header';
 import GiftsWish from './pages/GiftWish';
@@ -45,12 +45,12 @@ export default function Routes(){
                 <Screen
                     name="GiftCreate"
                     component={GiftCreate}
+                    options={{
+                        headerShown: true,
+                        header: ( ) => <Header showCancel={false} title="Enviar Carta"/>
+                    }}
                 />
 
-                <Screen 
-                    name="OrphanageCreated" 
-                    component={OrphanageCreated}
-                />
                 <Screen 
                     name="OrphanageDetails" 
                     component={OrphanageDetails}

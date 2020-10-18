@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Dimensions, Text } from 'react-native';
+import { View, Text, Image, Dimensions } from 'react-native';
+
+import styles from '../styles/orphanagesstyles';
 
 import { useNavigation } from '@react-navigation/native';
-import { RectButton } from 'react-native-gesture-handler';
+import { BorderlessButton, RectButton, TouchableOpacity } from 'react-native-gesture-handler';
 import MapView, { MapEvent, Marker } from 'react-native-maps';
-
+import addOrphangeIcon from '../../assets/addOrphangeIcon.png';
 import mapMarkerImg from '../images/map-marker.png';
 
 export default function SelectMapPosition() {
   const navigation = useNavigation();
   const [position, setPosition ] = useState({latitude: 0, longitude: 0});
+
+  const [instructionActive, setInstructionActive ] = useState(true);
 
   function handleNextStep() {
     navigation.navigate('OrphanageData', {position});
@@ -18,9 +22,10 @@ export default function SelectMapPosition() {
   function handleSelectMapPosition(event: MapEvent){
     setPosition(event.nativeEvent.coordinate);
   }
-
+  console.log(instructionActive)
   return (
-    <View style={styles.container}>
+    <View style={styles.containerSelectMapPosition}>
+            
       <MapView 
         initialRegion={{
           latitude: -5.0978947,
@@ -28,7 +33,10 @@ export default function SelectMapPosition() {
           latitudeDelta: 0.05,
           longitudeDelta: 0.05,
         }}
-        style={styles.mapStyle}
+        style={{
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height
+        }}
         onPress={handleSelectMapPosition}
       >
       { position.latitude != 0 && (
@@ -47,38 +55,13 @@ export default function SelectMapPosition() {
         )
       }
       
-
+      { instructionActive &&
+        <View style={styles.instructionsAddLocation}>
+          <BorderlessButton style={{elevation: 5, width:500, height:500}} onPress={()=>{setInstructionActive(false)}}>
+            <Image source={addOrphangeIcon} style={{alignSelf: 'center', justifyContent:'center'}} />
+          </BorderlessButton>
+        </View>
+      }
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    position: 'relative'
-  },
-
-  mapStyle: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  },
-
-  nextButton: {
-    backgroundColor: '#15c3d6',
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 56,
-
-    position: 'absolute',
-    left: 24,
-    right: 24,
-    bottom: 40,
-  },
-
-  nextButtonText: {
-    fontFamily: 'Nunito_800ExtraBold',
-    fontSize: 16,
-    color: '#FFF',
-  }
-})

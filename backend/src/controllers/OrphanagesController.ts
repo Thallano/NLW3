@@ -87,7 +87,7 @@ export default {
         
         await orphanagesRepository.save(orphanage);
         
-        return response.status(201).json(orphanage);
+        return response.status(201).json(orphanage.key);
     },
 
     /*async gift(request: Request, response: Response){

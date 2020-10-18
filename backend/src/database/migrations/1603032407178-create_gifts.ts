@@ -22,10 +22,6 @@ export class createGifts1603032407178 implements MigrationInterface {
                     name: 'wish',
                     type: 'text',
                 },
-                {
-                    name: 'value',
-                    type: 'decimal',
-                },
             ],
             foreignKeys:[
                 {

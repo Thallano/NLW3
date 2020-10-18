@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, View, Switch, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { ScrollView, View, Switch, Text, TextInput, TouchableOpacity, Image, Dimensions } from 'react-native';
 import styles from '../styles/orphanagesstyles';
 import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
@@ -8,6 +8,7 @@ import mapMarkerImg from '../images/map-marker.png';
 import { useNavigation, useRoute  } from '@react-navigation/native';
 import api from '../services/api';
 import * as ImagePicker from 'expo-image-picker';
+import OrphanageCreated from '../../assets/OrphanageCreated.png';
 
 
 interface OrphanageDataRouteParams {
@@ -26,6 +27,7 @@ export default function OrphanageData() {
   const [whatsapp, setWhatsapp] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<string[]>([]);
+  const [key, setKey] = useState('');
 
   const navigation = useNavigation();
 
@@ -53,10 +55,10 @@ export default function OrphanageData() {
         uri: image,
       } as any )
     })
-
-    await api.post('orphanages', data);
-
-    navigation.navigate('OrphanageCreated');
+    
+    await api.post('orphanages', data).then(response =>{
+      setKey(response.data)
+    });  
 
   }
 
@@ -82,7 +84,12 @@ export default function OrphanageData() {
     setImages([...images, image]);
   }
 
+  function handleNavigateToOrphanageMap(){
+    navigation.navigate('OrphanagesMap');
+  }
+
   return (
+    <>
     <ScrollView style={styles.containerData} contentContainerStyle={{ padding: 24 }}>
       <Text style={styles.title}>Dados</Text>
       <Text style={styles.label}>Localização</Text>
@@ -180,10 +187,32 @@ export default function OrphanageData() {
         />
       </View>
 
-      <RectButton style={styles.nextButton} onPress={handleCreateOrphanage}>
-        <Text style={styles.nextButtonText}>Cadastrar</Text>
+      <RectButton style={styles.creationButton} onPress={handleCreateOrphanage}>
+        <Text style={styles.creationText}>Cadastrar</Text>
       </RectButton>
     </ScrollView>
+
+    { key != '' &&
+      <View style={{alignItems: 'center', justifyContent: 'center', backgroundColor:'#39CC82', position: 'absolute', width: Dimensions.get('window').width, height: Dimensions.get('window').height,}}>
+          
+      <Text style={styles.titleOrphnageCreated}>Ebaaa!</Text>
+      <Text style={styles.titleOrphnageCreatedFooter}>Cadastro realizado com sucesso!</Text>
+
+      <Image source={OrphanageCreated} style={{alignSelf: 'center', width:215, height: 260}}/>
+      
+      <Feather name="gift" size={45} color="#FFF" style={{alignSelf: 'center',marginTop: 20, marginBottom: 20}}/>
+        <Text style={styles.titleOrphnageCreatedFooter}>Sua Key é {key}, este número é necessário para adicionar os presentes para suas crianças ^^! </Text>
+      
+        <View style={styles.footerOrphanageCreated}>
+        <RectButton style={styles.buttonOrphanageCreated} onPress={handleNavigateToOrphanageMap}>
+          <Feather name="check" size={20} color="#15B6D6" />
+        </RectButton>
+        </View>
+      </View>
+    }
+    
+    </>
+    
   )
 }
 
